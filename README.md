@@ -1,5 +1,11 @@
 # Babbo Natale Segreto: Telegram Bot
  Bot Telegram per creare e gestire un Babbo Natale Segreto con amici ecc.
+
+ [![GitHub issues](https://img.shields.io/github/issues/Kekko01/Babbo-Natale-Segreto-Telegram-Bot)](https://github.com/Kekko01/Babbo-Natale-Segreto-Telegram-Bot/issues)
+[![GitHub forks](https://img.shields.io/github/forks/Kekko01/Babbo-Natale-Segreto-Telegram-Bot)](https://github.com/Kekko01/Babbo-Natale-Segreto-Telegram-Bot/network)
+[![GitHub stars](https://img.shields.io/github/stars/Kekko01/Babbo-Natale-Segreto-Telegram-Bot)](https://github.com/Kekko01/Babbo-Natale-Segreto-Telegram-Bot/stargazers)
+[![GitHub license](https://img.shields.io/github/license/Kekko01/Babbo-Natale-Segreto-Telegram-Bot)](https://github.com/Kekko01/Babbo-Natale-Segreto-Telegram-Bot/blob/main/LICENSE)
+[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FKekko01%2FBabbo-Natale-Segreto-Telegram-Bot)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FKekko01%2FBabbo-Natale-Segreto-Telegram-Bot)
 ## Che cos'è?
 Il Babbo Natale Segreto è un gioco di gruppo in cui ogni partecipante, tramite un'estrazione a sorte del nome di ciascun partecipante, farà un regalo alla persona pescata dal sorteggio. Essa però non saprà da chi invece riceverà il regalo.
 L'apertura dei regali avverrà nella settimana dal 20 in poi.
