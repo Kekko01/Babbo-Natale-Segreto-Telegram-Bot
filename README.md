@@ -4,7 +4,7 @@
 Il Babbo Natale Segreto è un gioco di gruppo in cui ogni partecipante, tramite un'estrazione a sorte del nome di ciascun partecipante, farà un regalo alla persona pescata dal sorteggio. Essa però non saprà da chi invece riceverà il regalo.
 L'apertura dei regali avverrà nella settimana dal 20 in poi.
 ## Come scaricare e configurare bot
-1. Scarica il pacchetto di Python da: https://github.com/Kekko01/Babbo-Natale-Segreto-Telegram-Bot/archive/refs/heads/master.zip
+1. Scarica il pacchetto di Python da: https://github.com/Kekko01/Babbo-Natale-Segreto-Telegram-Bot/archive/refs/heads/main.zip
 2. Estrailo ed e nella cartella
 3. Modificare il file **credenziali.py** con le informazioni del Database e con il token di Telegram
 	```python
