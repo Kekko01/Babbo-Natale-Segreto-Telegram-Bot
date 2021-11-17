@@ -1,5 +1,5 @@
 import telepot, time, mysql.connector
-telegrambot = telepot.Bot("") #token del bot
+telegrambot = telepot.Bot("") #token del bot telegram
 
 def connect_databases():
   mydb = mysql.connector.connect(
