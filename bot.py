@@ -25,7 +25,7 @@ def telegram_chat(msg):
     if content_type == "text":
         messaggio=str(msg['text'])
         nome_persona = str(msg['from']['first_name'])
-        print("Messaggio da "+ nome_persona + ": " + messaggio)
+        print(f"Messaggio da {nome_persona}: {messaggio}")
         if messaggio == "/start":
             telegrambot.sendMessage(chat_id, f"Ciao {nome_persona}, benvenuto in Babbo Natale Segreto!\nSono stato creato da @Kekko01, visita il progetto del bot su: https://github.com/Kekko01/Babbo-Natale-Segreto-Telegram-Bot")
             telegrambot.sendMessage(chat_id,"/info per più informazioni.")
@@ -35,7 +35,7 @@ def telegram_chat(msg):
         elif messaggio == "/iscriviti":
             if iscrizioni_aperte:
                 myresult = check(chat_id)
-                if myresult == None:
+                if myresult is None:
                     telegrambot.sendMessage(chat_id, "Per iscriverti, devi inoltrare il messaggio qui sotto a chi gestisce il bot.")
                     telegrambot.sendMessage(chat_id, str(chat_id))
                 else:
@@ -44,7 +44,9 @@ def telegram_chat(msg):
                 telegrambot.sendMessage(chat_id, "Purtroppo le iscrizioni al Babbo Natale Segreto sono chiuse... mi dispiace.")
         elif messaggio == "/chipartecipa":
             myresult = check(chat_id)
-            if myresult != None:          
+            if myresult is None:
+                telegrambot.sendMessage(chat_id, "Non sei iscritto al Babbo Natale Segreto")
+            else:          
                 sql = "SELECT nome FROM partecipanti ORDER BY nome ASC"
                 mydb = connect_databases()
                 mycursor = mydb.cursor()
@@ -61,8 +63,6 @@ def telegram_chat(msg):
                     telegrambot.sendMessage(chat_id, messaggio)
                 except:
                     telegrambot.sendMessage(chat_id, "Errore nel generare la lista partecipanti, inoltra questo messaggio a chi gestisce il bot.")
-            else:
-                telegrambot.sendMessage(chat_id, "Non sei iscritto al Babbo Natale Segreto")
         elif messaggio == "/destinatario":
             sql = "SELECT destinatario FROM partecipanti WHERE chat_id = %s"
             val = (chat_id,)
@@ -79,7 +79,11 @@ def telegram_chat(msg):
             try:
                 telegrambot.sendMessage(chat_id, f"Dovrai fare il regalo a: {destinatario[0]}")
             except:
-                telegrambot.sendMessage(chat_id, f"Non hai una persona a cui fare il regalo, probabilmente non è ancora partito il Babbo Natale Segreto! Se no, contatta chi gestisce il bot.")
+                telegrambot.sendMessage(
+                    chat_id,
+                    "Non hai una persona a cui fare il regalo, probabilmente non è ancora partito il Babbo Natale Segreto! Se no, contatta chi gestisce il bot.",
+                )
+
             else:
                 telegrambot.sendMessage(
                     chat_id, "Non sei iscritto al Babbo Natale Segreto.")
