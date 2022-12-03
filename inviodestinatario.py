@@ -8,7 +8,7 @@ myresult = mycursor.fetchall()
 for x in myresult:
     try:
         time.sleep(2)
-        telegrambot.sendMessage(x[0], "Ciao " + x[1] + ", questo è un messaggio prova! 👌👌")
+        telegrambot.sendMessage(x[0], f"Ciao {x[1]}, questo è un messaggio prova! 👌👌")
     except:
         print(x[0])
 mycursor.close()
