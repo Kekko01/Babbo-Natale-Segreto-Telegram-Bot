@@ -70,19 +70,19 @@ def telegram_chat(msg):
             mycursor = mydb.cursor()
             mycursor.execute(sql, val)
             myresult = mycursor.fetchone()
-            sql = "SELECT nome FROM partecipanti WHERE chat_id = %s"
-            val = (myresult[0],)
-            mycursor = mydb.cursor()
-            mycursor.execute(sql, val)
-            destinatario = mycursor.fetchone()
-            mycursor.close()
-            try:
-                telegrambot.sendMessage(chat_id, f"Dovrai fare il regalo a: {destinatario[0]}")
-            except:
-                telegrambot.sendMessage(chat_id, f"Non hai una persona a cui fare il regalo, probabilmente non è ancora partito il Babbo Natale Segreto! Se no, contatta chi gestisce il bot.")
+            if myresult != None:
+                sql = "SELECT nome FROM partecipanti WHERE chat_id = %s"
+                val = (myresult[0],)
+                mycursor = mydb.cursor()
+                mycursor.execute(sql, val)
+                destinatario = mycursor.fetchone()
+                mycursor.close()
+                try:
+                    telegrambot.sendMessage(chat_id, f"Dovrai fare il regalo a: {destinatario[0]}")
+                except:
+                    telegrambot.sendMessage(chat_id, f"Non hai una persona a cui fare il regalo, probabilmente non è ancora partito il Babbo Natale Segreto! Se no, contatta chi gestisce il bot.")
             else:
-                telegrambot.sendMessage(
-                    chat_id, "Non sei iscritto al Babbo Natale Segreto.")
+                telegrambot.sendMessage(chat_id, "Non sei iscritto al Babbo Natale Segreto")
 
 print("In funzione...")
 try:
